@@ -21,10 +21,10 @@ class LinearRegression:
         # Gradient Descent function
         for _ in range(self.n_iters):
             # Predicting
-            y_pred = np.dot(X_samples, self.weights) + self.bias
+            y_pred = np.dot(X, self.weights) + self.bias
 
             # Calculating the partial derivatives
-            dw = (1/X_samples) * np.dot(X, (y_pred - y))
+            dw = (1/X_samples) * np.dot(X.T, (y_pred - y))
             db = (1/X_samples) + np.sum(y_pred - y)
 
             # Updating the parameters, to find the global minima
